@@ -4,6 +4,8 @@ An intelligent document Q&A system powered by **Retrieval-Augmented Generation (
 
 Built with LangChain, Groq (Llama 3.3-70b), HuggingFace Embeddings, and Streamlit.
 
+Live project URL :- https://rag-document-chatbot-wmtgy9aby327eaacun3ww8.streamlit.app/
+
 ## ✨ Features
 
 | Feature | Description |
