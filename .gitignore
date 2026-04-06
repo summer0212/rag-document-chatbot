@@ -1,0 +1,25 @@
+# Environment variables (contains API keys)
+.env
+
+# Python virtual environment
+venv/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# Temporary files
+*.tmp
