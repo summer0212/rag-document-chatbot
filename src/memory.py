@@ -3,6 +3,7 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
+from src.config import get_api_key
 
 load_dotenv()
 
@@ -46,7 +47,8 @@ def format_messages(messages):
 
 def summarize_messages(messages):
     """Use the LLM to summarize older messages into a brief paragraph"""
-    groq_api_key = os.environ.get("GROQ_API_KEY")
+    # groq_api_key = os.environ.get("GROQ_API_KEY")
+    groq_api_key = get_api_key()
     if not groq_api_key:
         # Fallback: just truncate instead of summarizing
         return format_messages(messages[-4:])

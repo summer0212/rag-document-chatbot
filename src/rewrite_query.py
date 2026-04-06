@@ -4,6 +4,7 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
+from src.config import get_api_key
 
 load_dotenv()
 
@@ -11,7 +12,8 @@ def rewrite_user_query(user_query):
     with st.container(border=True):
         st.markdown(user_query)
 
-    groq_api_key = os.environ["GROQ_API_KEY"]
+    # groq_api_key = os.environ["GROQ_API_KEY"]
+    groq_api_key = get_api_key()
     model_name = "llama-3.3-70b-versatile"
     llm = ChatGroq(groq_api_key=groq_api_key,model_name=model_name)
 

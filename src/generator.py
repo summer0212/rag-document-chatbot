@@ -5,12 +5,15 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from src.memory import build_conversation_context
 from dotenv import load_dotenv
+from src.config import get_api_key
 
 load_dotenv()
 
 def generate_answer(re_written_query, relevant_chunks):
     # Use .get() so it returns None instead of crashing if key is missing
-    groq_api_key = os.environ.get("GROQ_API_KEY")
+    # groq_api_key = os.environ.get("GROQ_API_KEY")
+    groq_api_key = get_api_key()
+
     
     if not groq_api_key:
         st.error("GROQ_API_KEY not found in environment variables.")
